@@ -1,0 +1,16 @@
+<!--pages/main/main.wxml-->
+<view >分享功能</view>
+
+<scroll-view>
+<canvas class="hidden" canvas-id="myCanvas"
+  style="width:300rpx;height:400rpx;margin: 5px; border:1px solid #d3d3d3;">
+  <image style="width=100px;height:100px" src='/images/s01.jpg'  mode='aspectFill'/>
+  <button bindtap='test' style="width=100;height=100">test</button>
+</canvas>
+
+<canvas style='width:200rpx;height:300rpx;top:20rpx;left:50px;border:1px solid #d3d3d3;' canvas-id='mc2'>
+
+</canvas>
+</scroll-view>
+
+<button class="mbt" bindtap="click" type="primary" >click</button>

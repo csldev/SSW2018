@@ -1,0 +1,25 @@
+<!--component/myImageDialog/myImageDialog.wxml-->
+
+<!--button-->
+<view class="btn" bindtap="click" data-statu="open">click</view>
+
+<!--mask-->
+<view class="d_screen" bindtap='click' data-statu="close" wx:if="{{showModalStatus}}"></view>
+
+<!--content-->
+<!--animation-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+  <!--drawer content-->
+  <view class="drawer_title">drawer title</view>
+  <view class="drawer_content">
+    <image src="../../images/s01.jpg"></image>
+  </view>
+  <view class="bottom_view">
+    <view class="bottom_btn" bindtap='save'>save</view>
+    <view class="bottom_btn" bindtap='save'>share</view>
+    <view class="bottom_btn" bindtap='save'>cancel</view>
+  </view>
+</view>
+
+

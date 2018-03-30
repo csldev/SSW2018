@@ -1,0 +1,5 @@
+<!--pages/test02/test02.wxml-->
+
+
+<myImageDialog inner-text='click'/>
+<imageDialog inner-text="click2"/>

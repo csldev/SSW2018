@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "myImageDialog": "../../component/myImageDialog/myImageDialog",
+    "imageDialog": "../../component/imageDialog/imageDialog"
+  }
+}

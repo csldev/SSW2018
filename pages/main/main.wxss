@@ -1,0 +1,11 @@
+/* pages/main/main.wxss */
+
+.mbt{
+  position: fixed;
+  bottom: 1%;
+  width: 100%;
+}
+/* .hidden{
+  visibility:hidden;
+} */
+
