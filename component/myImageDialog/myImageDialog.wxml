@@ -13,12 +13,12 @@
   <!--drawer content-->
   <view class="drawer_title">drawer title</view>
   <view class="drawer_content">
-    <image src="../../images/s01.jpg"></image>
+    <image src="{{imagePath}}"></image>
   </view>
   <view class="bottom_view">
-    <view class="bottom_btn" bindtap='save'>save</view>
-    <view class="bottom_btn" bindtap='save'>share</view>
-    <view class="bottom_btn" bindtap='save'>cancel</view>
+    <button class="bottom_btn" style='flex-item' bindtap='save'>save</button>
+    <button class="bottom_btn" style='flex-item' bindtap='share'>share</button>
+    <button class="bottom_btn" style='flex-item' bindtap='cancel'>cancel</button>
   </view>
 </view>
 

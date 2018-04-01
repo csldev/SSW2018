@@ -4,14 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    imagePath: String
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    showModalStatus: false 
+    showModalStatus: false
   },
 
   /**
@@ -72,9 +72,15 @@ Component({
       }
     },
 
-    save:function(e){},
-    share: function (e) {},
-    cancel: function (e) {}
+    save:function(e){
+      console.log("save")
+    },
+    share: function (e) {
+      console.log("share")
+    },
+    cancel: function (e) {
+      console.log("cancel")
+    }
 
   }
 })

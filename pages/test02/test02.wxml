@@ -1,5 +1,8 @@
 <!--pages/test02/test02.wxml-->
 
+<!--使用事项-->
+<!--01:imagePathb表示模板所在路径-->
+<myImageDialog inner-text='click' imagePath='../../images/s01.jpg'/>
 
-<myImageDialog inner-text='click'/>
-<imageDialog inner-text="click2"/>
+
+
