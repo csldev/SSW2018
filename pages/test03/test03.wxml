@@ -1,2 +1,3 @@
 <!--pages/test03/test03.wxml-->
 <button bindtap='click'>click</button>
+<canvas canvas-id='can_qrcode'></canvas>

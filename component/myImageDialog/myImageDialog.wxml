@@ -1,10 +1,10 @@
 <!--component/myImageDialog/myImageDialog.wxml-->
 
 <!--button-->
-<view class="btn" bindtap="click" data-statu="open">click</view>
+<view class="btn" bindtap="click1" data-statu="open">click</view>
 
 <!--mask-->
-<view class="d_screen" bindtap='click' data-statu="close" wx:if="{{showModalStatus}}"></view>
+<view class="d_screen" bindtap='click2' data-statu="close" wx:if="{{showModalStatus}}"></view>
 
 <!--content-->
 <!--animation-->
@@ -13,13 +13,17 @@
   <!--drawer content-->
   <view class="drawer_title">drawer title</view>
   <view class="drawer_content">
-    <image src="{{imagePath}}"></image>
+  <image src="{{final_ip}}" style='width:300;height:300'></image>
   </view>
   <view class="bottom_view">
     <button class="bottom_btn" style='flex-item' bindtap='save'>save</button>
     <button class="bottom_btn" style='flex-item' bindtap='share'>share</button>
     <button class="bottom_btn" style='flex-item' bindtap='cancel'>cancel</button>
   </view>
+</view>
+
+<view wx:if="{{isDisplay}}" style='overflow:hidden;opacity:0'>
+  <canvas class='bright789_view_hide' canvas-id='can_img' wx:if="false" style='border:1px solid;width:700rpx;height:600rpx'/>
 </view>
 
 

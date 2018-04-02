@@ -17,18 +17,44 @@ Page({
   },
 
   click:function(e){
+    var that = this;
     wx.request({
-      url: 'https://api.weixin.qq.com/wxa/getwxacode?access_token=ACCESS_TOKEN',
+      url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=	wxe6b1d4202c2d41a2&secret=07d09dc8020d582b3104f542d552994c',
       method:"GET",
-      path:'',
-      width: 460,
-      auto_color: false,
       success:function(res){
-        console.log(res)
+        console.log(res.data.access_token+" "+res.data.expires_in)
+        wx.request({
+          url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token='+res.data.access_token,
+          method:"POST",
+          data:{
+            scene:scene,
+            page:"pages/test03/test03",
+            width:430,
+          },
+          success:function(res){
+            console.log(res)
+            that.loadQRCode(res);
+          }
+        })
       }
     })
   },
 
+
+  loadQRCode: function (res) {
+    var data = new Uint8ClampedArray(res);
+    wx.canvasPutImageData({
+      canvasId: 'can_qrcode',
+      data: data,
+      x: 0,
+      y: 0,
+      width: 430,
+      success:function(res){
+        console.log("ok")
+      }
+    })
+
+  },
 
   /**
    * 生命周期函数--监听页面加载

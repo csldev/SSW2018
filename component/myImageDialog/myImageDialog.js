@@ -11,16 +11,35 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showModalStatus: false
+    showModalStatus: false,
+    final_ip:'',
+    isDisplay:'true'
   },
 
   /**
    * 组件的方法列表
    */
-  methods: {
+  methods:{
+
+    click1:function(e){
+      this.setData({
+        isDisplay: 'false'
+      });
+      this.click(e);
+    },
+
+    click2:function(e){
+      this.setData({
+        isDisply:'true'
+      });
+      this.click(e);
+    },
+
     click: function (e) {
+      this.loadImg();
+      console.log(this.data.final_ip)
       var currentStatu = e.currentTarget.dataset.statu;
-      this.util(currentStatu)
+      this.util(currentStatu);
     },  
 
     util: function (currentStatu) {
@@ -72,6 +91,41 @@ Component({
       }
     },
 
+    loadImg:function(){
+      var that = this;
+      const ctx = wx.createCanvasContext('can_img', this);
+      var ip = this.properties.imagePath;
+      var iqr = '../../images/s02.jpg';
+
+      ctx.drawImage(ip, 10, 10, 200, 200);
+      ctx.drawImage(iqr, 150, 150, 50, 50);
+      ctx.draw(false, function () {
+        wx.canvasToTempFilePath({
+          x: 10,
+          y: 10,
+          width: 200,
+          height: 200,
+          destWidth: 200,
+          destHeight: 200,
+          quality: 0.8,
+          canvasId: 'can_img',
+          success: function (res) {
+            console.log(res.tempFilePath)
+            that.setData(
+              {
+                final_ip: res.tempFilePath
+              },
+            )
+          },
+          fail: function (res) {
+            console.log(res)
+          }
+        },that)            
+        
+      });
+
+    },
+    
     save:function(e){
       console.log("save")
     },
@@ -82,5 +136,6 @@ Component({
       console.log("cancel")
     }
 
-  }
+  },
+    
 })
